@@ -105,14 +105,14 @@ Recipe
         }
 
         # Fighting with Styles? This little gem is amazing.
-        # location ~ ^/sites/.*/files/imagecache/ { # For Drupal <= 6
-        location ~ ^/sites/.*/files/styles/ { # For Drupal >= 7
+        # location ~ ^/sites/.*/files/imagecache/ { # For Drupal <= 7
+        location ~ ^/sites/.*/files/styles/ { # For Drupal >= 8
             try_files $uri @rewrite;
         }
 
         # Handle private files through Drupal. Private file's path can come
         # with a language prefix.
-        location ~ ^(/[a-z\-]+)?/system/files/ { # For Drupal >= 7
+        location ~ ^(/[a-z\-]+)?/system/files/ { # For Drupal >= 8
             try_files $uri /index.php?$query_string;
         }
 
